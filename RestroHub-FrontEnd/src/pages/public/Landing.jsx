@@ -128,11 +128,24 @@ const Landing = () => {
   ];
 
   const footerColumns = [
-    { title: 'Product', links: ['Features', 'Pricing', 'Integrations', 'Changelog'] },
-    { title: 'Company', links: ['About Us', 'Blog', 'Careers', 'Contact'] },
-    { title: 'Legal', links: ['Privacy Policy', 'Terms of Service', 'Refund Policy'] },
-  ];
-
+  { title: 'Product', links: [
+    { label: 'Features', href: '#features' },
+    { label: 'Pricing', href: '#pricing' },
+    { label: 'Integrations', href: '#' },
+    { label: 'Changelog', href: '#' },
+  ]},
+  { title: 'Company', links: [
+    { label: 'About Us', href: '#' },
+    { label: 'Blog', href: '#' },
+    { label: 'Careers', href: '#' },
+    { label: 'Contact', href: '#' },
+  ]},
+  { title: 'Legal', links: [
+    { label: 'Privacy Policy', href: '#' },
+    { label: 'Terms of Service', href: '#' },
+    { label: 'Refund Policy', href: '#' },
+  ]},
+];
   const stats = [
     { value: '500+', label: 'Restaurants' },
     { value: '1.2M+', label: 'Orders Processed' },
