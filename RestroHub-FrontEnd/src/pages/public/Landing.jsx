@@ -575,25 +575,22 @@ const Landing = () => {
 
             {/* Link Columns */}
             {footerColumns.map((col) => (
-              <div key={col.title}>
-                <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-300">
-                  {col.title}
-                </h4>
-                <ul className="space-y-3">
-                  {col.links.map((link) => (
-                    <li key={link}>
-                      <a
-                        href="#"
-                        className="text-sm text-slate-400 transition-colors hover:text-white"
-                      >
-                        {link}
-                      </a>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
+  <div key={col.title}>
+    <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-300">
+      {col.title}
+    </h4>
+    <ul className="space-y-3">
+      {col.links.map((link) => (
+        <li key={link.label}>
+          <a href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
+            {link.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </div>
+))}
+</div>
 
           {/* Bottom Bar */}
           <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
