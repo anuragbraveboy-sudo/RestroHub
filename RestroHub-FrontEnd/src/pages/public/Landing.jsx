@@ -1,3 +1,4 @@
+import BackToTop from "../../components/BackToTop";
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
@@ -128,24 +129,25 @@ const Landing = () => {
   ];
 
   const footerColumns = [
-  { title: 'Product', links: [
-    { label: 'Features', href: '#features' },
-    { label: 'Pricing', href: '#pricing' },
-    { label: 'Integrations', href: '#' },
-    { label: 'Changelog', href: '#' },
-  ]},
-  { title: 'Company', links: [
-    { label: 'About Us', href: '#' },
-    { label: 'Blog', href: '#' },
-    { label: 'Careers', href: '#' },
-    { label: 'Contact', href: '#' },
-  ]},
-  { title: 'Legal', links: [
-    { label: 'Privacy Policy', href: '#' },
-    { label: 'Terms of Service', href: '#' },
-    { label: 'Refund Policy', href: '#' },
-  ]},
-];
+    { title: 'Product', links: [
+      { label: 'Features', href: '#features' },
+      { label: 'Pricing', href: '#pricing' },
+      { label: 'Integrations', href: '#' },
+      { label: 'Changelog', href: '#' },
+    ]},
+    { title: 'Company', links: [
+      { label: 'About Us', href: '#' },
+      { label: 'Blog', href: '#' },
+      { label: 'Careers', href: '#' },
+      { label: 'Contact', href: '#' },
+    ]},
+    { title: 'Legal', links: [
+      { label: 'Privacy Policy', href: '#' },
+      { label: 'Terms of Service', href: '#' },
+      { label: 'Refund Policy', href: '#' },
+    ]},
+  ];
+
   const stats = [
     { value: '500+', label: 'Restaurants' },
     { value: '1.2M+', label: 'Orders Processed' },
@@ -157,7 +159,8 @@ const Landing = () => {
   // RENDER
   // ============================
   return (
-    <div className="min-h-screen bg-white">
+    <>
+  <div className="min-h-screen bg-white">
 
       {/* ================================================ */}
       {/* NAVBAR                                           */}
@@ -292,7 +295,7 @@ const Landing = () => {
                 Start Free Trial
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
-              <button className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-8 py-4 text-base font-bold text-slate-700 shadow-sm transition-all hover:border-blue-300 hover:text-blue-600 sm:text-lg">
+              <button onClick={() => alert('Demo coming soon!')} className="inline-flex items-center gap-2 rounded-xl border-2 border-slate-200 bg-white px-8 py-4 text-base font-bold text-slate-700 shadow-sm transition-all hover:border-blue-300 hover:text-blue-600 sm:text-lg">
                 <Play className="h-5 w-5 fill-blue-600 text-blue-600" />
                 Watch Demo
               </button>
@@ -574,35 +577,40 @@ const Landing = () => {
             </div>
 
             {/* Link Columns */}
-            {footerColumns.map((col) => (
+{footerColumns.map((col) => (
   <div key={col.title}>
     <h4 className="mb-4 text-sm font-bold uppercase tracking-wider text-slate-300">
       {col.title}
     </h4>
     <ul className="space-y-3">
       {col.links.map((link) => (
-        <li key={link.label}>
-          <a href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
-            {link.label}
-          </a>
-        </li>
+        <li key={link.label}><a href={link.href} className="text-sm text-slate-400 transition-colors hover:text-white">
+  
+    href={link.href}
+    className="text-sm text-slate-400 transition-colors hover:text-white"
+  >
+    {link.label}
+  </a>
+</li>
       ))}
     </ul>
   </div>
 ))}
-</div>
+</div> 
 
-          {/* Bottom Bar */}
-          <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
-            <p className="text-sm text-slate-500">
-              © {new Date().getFullYear()} Restroly. All rights reserved.
-            </p>
-            <p className="text-sm text-slate-500">Made with ❤️ in India</p>
-          </div>
-        </div>
-      </footer>
-    </div>
-  );
+{/* Bottom Bar */}
+<div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-slate-800 pt-8 sm:flex-row">
+  <p className="text-sm text-slate-500">
+    © {new Date().getFullYear()} Restroly. All rights reserved.
+  </p>
+  <p className="text-sm text-slate-500">Made with ❤️ in India</p>
+</div>
+</div>
+</footer>
+</div>
+<BackToTop />
+</>
+);
 };
 
 export default Landing;
